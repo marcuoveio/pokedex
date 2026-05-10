@@ -4,8 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
-  base: "./",
-
+  base: '/pokedex/',
   server: {
     host: "::",
     port: 8080,
