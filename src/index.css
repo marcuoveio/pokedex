@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 84% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 48 96% 53%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 0 84% 55%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(0 84% 55%) 0%, hsl(48 96% 53%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(222 47% 12%) 0%, hsl(222 47% 7%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(0 84% 55% / 0.25), transparent 70%);
+
+    --shadow-glow: 0 20px 60px -20px hsl(0 84% 55% / 0.5);
+    --shadow-card: 0 10px 40px -15px hsl(222 70% 2% / 0.6);
+
+    --type-normal: 220 9% 46%;
+    --type-fire: 14 90% 55%;
+    --type-water: 217 89% 61%;
+    --type-electric: 48 96% 53%;
+    --type-grass: 134 61% 41%;
+    --type-ice: 187 70% 60%;
+    --type-fighting: 0 71% 41%;
+    --type-poison: 290 50% 45%;
+    --type-ground: 35 60% 50%;
+    --type-flying: 240 50% 70%;
+    --type-psychic: 330 80% 60%;
+    --type-bug: 80 60% 45%;
+    --type-rock: 40 30% 45%;
+    --type-ghost: 270 35% 45%;
+    --type-dragon: 260 80% 55%;
+    --type-dark: 30 15% 25%;
+    --type-steel: 210 15% 60%;
+    --type-fairy: 330 70% 75%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-card { background: var(--gradient-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
